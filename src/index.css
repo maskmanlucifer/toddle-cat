@@ -1,13 +1,102 @@
-body {
+body{
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.header {
+  text-align: center;
+  background-color: rgb(51, 122, 183);
+  width: 100%;
+}
+.header h5 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.add-button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(51, 122, 183);
+  margin-top: 40px;
+  color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
+
+.add-button h3 {
+  color: white;
+  margin: 0;
+}
+
+.add-button img {
+  padding: 6px;
+}
+
+.standard-list {
+  margin: auto;
+  margin-top: 30px;
+  width: 80%;
+  display: flex;
+}
+
+.standard-list .heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.standard-list .heading h3 {
+  color: black;
+  margin: 0;
+  font-size: 15px;
+}
+
+.standard-list .heading p {
+  color: grey;
+  font-size: 13px;
+}
+.standard-list .heading .actions {
+  flex: 1;
+}
+
+.standard-list .heading .standard {
+  margin-left: 12px;
+  flex:2;
+}
+
+.subject {
+  width: 80%;
+  margin: auto;
+  color: rgb(163, 159, 159);
+  border-bottom: 2px solid rgb(163, 159, 159);
+}
+
+.subject .right,.left {
+  display: inline-block;
+}
+.subject .right {
+  margin-left: 60%;
+}
+input[type=submit] {
+  font-size: 15px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  padding: 4px;
+  color: black;
+}
+input[type=submit]:hover {
+  cursor: pointer;
 }
