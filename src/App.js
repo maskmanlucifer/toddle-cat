@@ -23,6 +23,8 @@ function App() {
 		setData(dataCopy);
   };
 
+  
+
   const outdent = (index) => {
     const dataCopy = [...data];
     let len = dataCopy.length-1;

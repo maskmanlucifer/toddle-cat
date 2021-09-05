@@ -57,7 +57,7 @@ body{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid rgb(197, 195, 195);
+  border-bottom: 1px solid rgb(197, 195, 195);
 }
 
 .standard-list .heading h3 {
@@ -107,6 +107,7 @@ input[type=submit]:hover {
  width: 80%;
  margin: auto;
 }
+
 .subject .right a {
   padding: 6px;
   background-color: #0275d8;
@@ -114,6 +115,8 @@ input[type=submit]:hover {
   border-radius: 5px;
   color: white;
 }
+
+
 .standard-indivisual img {
   opacity: 0.2;
   margin-right: 10px;
@@ -129,7 +132,8 @@ input[type=submit]:hover {
 
 .standard-indivisual {
   display: flex;
-  border-bottom: 2px solid rgb(197, 195, 195);
+  border-top: 1px solid rgb(197, 195, 195);
+  border-bottom: 1px solid rgb(197, 195, 195);
 }
 
 .standard-indivisual .actions {

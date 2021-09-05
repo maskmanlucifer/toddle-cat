@@ -12,6 +12,7 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                    <h3>Mathematics</h3> 
                 </div>
                 <div className="right">
+
                 <a
                 href={`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(data)
@@ -20,6 +21,8 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                 >
                 {`Download Json`}
                 </a>
+
+                
                 </div>
             </div>
             <DragDropContext onDragEnd={(param)=>{
@@ -50,7 +53,9 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                         <div className="standard-indivisual"  ref={provided.innerRef} {...provided.draggableProps} 
                         style = {{ 
                             ...provided.draggableProps.style,
-                            marginLeft: snapshot.isDragging ? "10%" : "10%"
+                            marginLeft: snapshot.isDragging ? "10%" : "10%",
+                            border: snapshot.isDragging ? "2px dashed #0275d8" : "",
+                            
                         }}
                         >
                         <div className="actions">
@@ -68,7 +73,7 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
 
                         <div className="standard-text">
                             <div className="indent-block" style={{ marginLeft:`${standard.tabs*25}px`}}></div>
-                            <div className="text"><input className="text-value"  style={{color: standard.tabs === 0 ? " #0275d8" : "black", opacity: 2/Math.pow(2, standard.tabs)}} type="textarea" placeholder="Edit text" value={standard.value} onChange={(e)=>{
+                            <div className="text"><input className="text-value"  style={{color: standard.tabs === 0 ? "#0275d8" : "black", opacity: 2/Math.pow(2, standard.tabs)}} type="textarea" placeholder="Edit text" value={standard.value} onChange={(e)=>{
                                 onchange(e,index);
                             }}/></div>
                         </div>
