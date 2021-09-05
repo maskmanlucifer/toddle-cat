@@ -12,6 +12,44 @@ function App() {
 		{ id: uuid(), value: "Units", tabs: 2 },
 	]);
   
+  const indent = (index) => {
+    const dataCopy = [...data];
+    if(index === 0 ) {
+      return ;
+    }
+      if((dataCopy[index-1].tabs - dataCopy[index].tabs >= 0)  && dataCopy[index].tabs<2) {
+        dataCopy[index].tabs++;
+      }
+		setData(dataCopy);
+  };
+
+  const outdent = (index) => {
+    const dataCopy = [...data];
+    let len = dataCopy.length-1;
+    if(index === len) {
+      if (dataCopy[index].tabs > 0) {
+        dataCopy[index].tabs--;
+      }
+    } else {
+      if((dataCopy[index+1].tabs - dataCopy[index].tabs <= 1) && dataCopy[index].tabs>0) {
+        dataCopy[index].tabs--;
+      }
+    }
+    setData(dataCopy);
+  };
+
+  const onchange = (e,index)=>{
+    const dataCopy = [...data];
+    dataCopy[index].value = e.target.value;
+    setData(dataCopy);
+  }
+
+  const addnew = () => {
+    setData([
+			...data,
+			{ id: uuid(), value: "", tabs: 0 }
+		]);
+  }
   const handleDelete = (id) => {
     let ind=-1;
 
@@ -22,6 +60,7 @@ function App() {
       }
     }
     
+
     let newData=[...data];
 
     if(ind !== -1) {
@@ -52,8 +91,8 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Standardlist data={data} handleDelete={handleDelete}/>
-      <Addbutton />
+      <Standardlist data={data} handleDelete={handleDelete} indent={indent} outdent={outdent} onchange={onchange}/>
+      <Addbutton addnew={addnew}/>
     </div>
   );
 }

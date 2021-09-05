@@ -1,9 +1,13 @@
 import add from "../icons/add.svg";
-const Addbutton = () => {
+const Addbutton = ({addnew}) => {
     return ( 
       <div className="add-button" >
-          <img src={add} alt=""/>
-       <h3>Add a standard</h3>
+          <img src={add} alt="add" onClick={()=>{
+         addnew();
+       }}/>
+       <h3 onClick={()=>{
+         addnew();
+       }}>Add a standard</h3>
       </div>
     );
 }

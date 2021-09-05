@@ -1,8 +1,8 @@
 import Button from "./Button";
 import Standard from "./Standard";
-const Standardlist = ({data,handleDelete}) => {
+const Standardlist = ({data,handleDelete,indent,outdent,onchange}) => {
     return ( 
-        <>
+        <div>
         <div className="subject">
             <div className="left">
             <h3>Mathematics</h3> 
@@ -26,12 +26,12 @@ const Standardlist = ({data,handleDelete}) => {
         </div>
         <div>
             {
-                data.map((standard)=>(
-                    <Standard standard={standard} key={standard.id} handleDelete={handleDelete}/>
+                data.map((standard,index)=>(
+                    <Standard standard={standard} key={standard.id} index={index} handleDelete={handleDelete} indent={indent} outdent={outdent} onchange={onchange}/>
                 ))
             }
         </div>
-        </>
+        </div>
     );
 }
  

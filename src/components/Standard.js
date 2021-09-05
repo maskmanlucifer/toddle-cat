@@ -1,9 +1,9 @@
 import move from "../icons/move.svg";
-import indent from "../icons/indent.svg";
-import outdent from "../icons/outdent.svg";
+import Indent from "../icons/indent.svg";
+import Outdent from "../icons/outdent.svg";
 import del from "../icons/delete.svg";
 
-const Standard = ({standard,handleDelete}) => {
+const Standard = ({standard,handleDelete,index,indent,outdent,onchange}) => {
 
     let fontColor = "rgb(47, 194, 186)";
     if(standard.tabs === 1) {
@@ -16,15 +16,21 @@ const Standard = ({standard,handleDelete}) => {
     <div className="standard-indivisual">
         <div className="actions">
           <img src={move} alt="move" />
-          <img src={outdent} alt="outdent" />
-          <img src={indent} alt="indent" />
+          <img src={Outdent} alt="outdent" onClick={()=>{
+              outdent(index);
+          }}/>
+          <img src={Indent} alt="indent" onClick={()=>{
+              indent(index);
+          }}/>
           <img src={del} alt="delete" onClick={()=>{
               handleDelete(standard.id);
           }}/>
         </div>
         <div className="standard-text">
             <div className="indent-block" style={{ marginLeft:`${standard.tabs*25}px`}}></div>
-            <div className="text" style={{color:fontColor}}>{standard.value}</div>
+            <div className="text"><input className="text-value" style={{color:fontColor}} type="textarea" placeholder="Edit text" value={standard.value} onChange={(e)=>{
+                onchange(e,index);
+            }}/></div>
         </div>
     </div>
     );

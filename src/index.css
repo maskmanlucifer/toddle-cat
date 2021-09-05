@@ -148,6 +148,15 @@ input[type=submit]:hover {
 .standard-indivisual .standard-text .text {
   margin-left: 70px;
 }
-.me {
-color:rgb(47, 194, 186)
+
+.text-value {
+  width: 500px;
+	height: 18px;
+	resize: none;
+	overflow: none;
+	outline: none;
+	background: none;
+	border: none;
+	text-align: left;
+	font-size: 17px;
 }
