@@ -1,5 +1,6 @@
 import Button from "./Button";
-const Standardlist = () => {
+import Standard from "./Standard";
+const Standardlist = ({data,handleDelete}) => {
     return ( 
         <>
         <div className="subject">
@@ -14,13 +15,21 @@ const Standardlist = () => {
             <div className="heading">
                 <div className="actions">
                     <h3>Actions</h3>
-                    <p>Move,Outdent,Indent,Delete</p>
+                    <p>Move,Outdent,
+                    Indent,Delete</p>
                 </div>
                 <div className="standard">
                     <h3>Standard</h3>
                     <p>The text of standard</p>
                 </div>
             </div>
+        </div>
+        <div>
+            {
+                data.map((standard)=>(
+                    <Standard standard={standard} key={standard.id} handleDelete={handleDelete}/>
+                ))
+            }
         </div>
         </>
     );

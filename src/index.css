@@ -54,8 +54,10 @@ body{
 }
 
 .standard-list .heading {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid rgb(197, 195, 195);
 }
 
 .standard-list .heading h3 {
@@ -73,15 +75,15 @@ body{
 }
 
 .standard-list .heading .standard {
-  margin-left: 12px;
+  margin-left: 30px;
   flex:2;
 }
 
 .subject {
   width: 80%;
   margin: auto;
-  color: rgb(163, 159, 159);
-  border-bottom: 2px solid rgb(163, 159, 159);
+  color: black;
+  border-bottom: 2px solid rgb(197, 195, 195);
 }
 
 .subject .right,.left {
@@ -92,11 +94,60 @@ body{
 }
 input[type=submit] {
   font-size: 15px;
-  border: 2px solid grey;
+  border: 2px solid rgb(68, 67, 67);
   border-radius: 4px;
   padding: 4px;
-  color: black;
+  color: rgb(44, 42, 42);
 }
 input[type=submit]:hover {
   cursor: pointer;
+}
+
+.standard-indivisual {
+ width: 80%;
+ margin: auto;
+}
+
+.standard-indivisual img {
+  opacity: 0.2;
+  margin-right: 10px;
+}
+
+.standard-indivisual img:hover {
+  opacity: 1;
+}
+
+.standard-indivisual img:first-child {
+  cursor: pointer;
+}
+
+.standard-indivisual {
+  display: flex;
+  border-bottom: 2px solid rgb(197, 195, 195);
+}
+
+.standard-indivisual .actions {
+  flex: 1;
+  margin-top: 4px;
+}
+
+.standard-indivisual .standard-text {
+  flex: 3;
+  display: flex;
+  align-items: center;
+ 
+}
+
+.standard-indivisual .standard-text .indent-block {
+  width: 30px;
+  height: 100%;
+  background-color: rgb(238, 226, 226);
+  border: 1px solid rgb(197, 195, 195);
+}
+
+.standard-indivisual .standard-text .text {
+  margin-left: 70px;
+}
+.me {
+color:rgb(47, 194, 186)
 }
