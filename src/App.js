@@ -88,10 +88,17 @@ function App() {
     }
     
   }
+
+  const handlednd = (srcI,desI) => {
+    let newData = [...data];
+    newData.splice(desI,0,newData.splice(srcI,1)[0]);
+    setData(newData);
+  };
+
   return (
     <div className="App">
       <Header/>
-      <Standardlist data={data} handleDelete={handleDelete} indent={indent} outdent={outdent} onchange={onchange}/>
+      <Standardlist data={data} handlednd={handlednd} handleDelete={handleDelete} indent={indent} outdent={outdent} onchange={onchange}/>
       <Addbutton addnew={addnew}/>
     </div>
   );
