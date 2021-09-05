@@ -1,4 +1,3 @@
-import Button from "./Button";
 import move from "../icons/move.svg";
 import Indent from "../icons/indent.svg";
 import Outdent from "../icons/outdent.svg";
@@ -6,7 +5,6 @@ import del from "../icons/delete.svg";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => {
-
     return ( 
         <div className="binding-container">
             <div className="subject">
@@ -14,7 +12,14 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                    <h3>Mathematics</h3> 
                 </div>
                 <div className="right">
-                <Button color={"rgb(51, 122, 183)"} text={"Upload JSON"}/> <Button color={"cyan"} text={"Download JSON"}/>
+                <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(data)
+                )}`}
+                download="api.json"
+                >
+                {`Download Json`}
+                </a>
                 </div>
             </div>
             <DragDropContext onDragEnd={(param)=>{

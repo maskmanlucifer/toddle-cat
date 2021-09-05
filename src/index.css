@@ -107,7 +107,13 @@ input[type=submit]:hover {
  width: 80%;
  margin: auto;
 }
-
+.subject .right a {
+  padding: 6px;
+  background-color: #0275d8;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+}
 .standard-indivisual img {
   opacity: 0.2;
   margin-right: 10px;
@@ -150,7 +156,7 @@ input[type=submit]:hover {
 }
 
 .text-value {
-  width: 500px;
+  width: 200px;
 	height: 18px;
 	resize: none;
 	overflow: none;
