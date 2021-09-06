@@ -3,7 +3,10 @@ import Addbutton from "./components/Addbutton";
 import Standardlist from "./components/Standardlist";
 import { v4 as uuid } from "uuid";
 import {useState} from 'react';
+
 function App() {
+
+  // initialize useState Hook
   const [data, setData] = useState([
 		{ id: uuid(), value: "Numbers", tabs: 0 },
 		{ id: uuid(), value: "Counting", tabs: 1 },
@@ -12,22 +15,26 @@ function App() {
 		{ id: uuid(), value: "Units", tabs: 2 },
 	]);
   
+
+  // function for handling indent operation
   const indent = (index) => {
     const dataCopy = [...data];
     if(index === 0 ) {
       return ;
     }
-      if((dataCopy[index-1].tabs - dataCopy[index].tabs >= 0)  && dataCopy[index].tabs<2) {
-        dataCopy[index].tabs++;
-      }
+
+    if((dataCopy[index-1].tabs - dataCopy[index].tabs >= 0)  && dataCopy[index].tabs<2) {
+      dataCopy[index].tabs++;
+    }
+
 		setData(dataCopy);
   };
 
-  
-
+  // function for handling outdent operation
   const outdent = (index) => {
     const dataCopy = [...data];
     let len = dataCopy.length-1;
+
     if(index === len) {
       if (dataCopy[index].tabs > 0) {
         dataCopy[index].tabs--;
@@ -37,22 +44,26 @@ function App() {
         dataCopy[index].tabs--;
       }
     }
+
     setData(dataCopy);
   };
-
+ 
+  // handling text field change save 
   const onchange = (e,index)=>{
     const dataCopy = [...data];
     dataCopy[index].value = e.target.value;
     setData(dataCopy);
   }
-
+  
+  // adding new standard
   const addnew = () => {
     setData([
 			...data,
 			{ id: uuid(), value: "", tabs: 0 }
 		]);
   };
-
+  
+  // deleting a standard
   const handleDelete = (id) => {
     let ind=-1;
 
@@ -91,7 +102,8 @@ function App() {
     }
     
   };
-
+ 
+  // handling drag and drop
   const handlednd = (srcI,desI) => {
     let newData = [...data];
     newData.splice(desI,0,newData.splice(srcI,1)[0]);

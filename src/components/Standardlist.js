@@ -25,24 +25,26 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                 
                 </div>
             </div>
+
             <DragDropContext onDragEnd={(param)=>{
                 const srcI=param.source.index;
                 const desI = param.destination.index;
                 handlednd(srcI,desI);
             }}>
             <div className="standard-list">
-                    <div className="heading">
-                        <div className="actions">
-                            <h3>Actions</h3>
-                            <p>Move,Outdent,
-                            Indent,Delete</p>
-                        </div>
-                        <div className="standard">
-                            <h3>Standard</h3>
-                            <p>The text of standard</p>
-                        </div>
+                <div className="heading">
+                    <div className="actions">
+                        <h3>Actions</h3>
+                        <p>Move,Outdent,
+                        Indent,Delete</p>
                     </div>
+                    <div className="standard">
+                        <h3>Standard</h3>
+                        <p>The text of standard</p>
+                    </div>
+                </div>
             </div>
+
             <Droppable droppableId="droppable-1">
             {(provided, _) => (
             <div className="task-list"   ref={provided.innerRef} {...provided.droppableProps}>
@@ -79,7 +81,6 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                         </div>
                         </div>
                     )}
-                    
                     </Draggable>
                     ))
                 }
