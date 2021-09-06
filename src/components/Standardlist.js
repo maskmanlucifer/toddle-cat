@@ -17,7 +17,7 @@ const Standardlist = ({data,handlednd,handleDelete,indent,outdent,onchange}) => 
                 href={`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(data)
                 )}`}
-                download="api.json"
+                download="standard.json"
                 >
                 {`Download Json`}
                 </a>
