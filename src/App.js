@@ -51,7 +51,8 @@ function App() {
 			...data,
 			{ id: uuid(), value: "", tabs: 0 }
 		]);
-  }
+  };
+
   const handleDelete = (id) => {
     let ind=-1;
 
@@ -89,12 +90,30 @@ function App() {
       setData(newData);
     }
     
-  }
+  };
 
   const handlednd = (srcI,desI) => {
     let newData = [...data];
     newData.splice(desI,0,newData.splice(srcI,1)[0]);
-    setData(newData);
+    let allGood=true;
+    if(newData[0].tabs !== 0) {
+     allGood=false;
+    }
+    for(let i=0;i<newData.length-1;i++) {
+      if(newData[i].tabs === 0) {
+        if(newData[i+1].tabs === 2) {
+          allGood=false;
+          break;
+        }
+    }
+    }
+    if(allGood) {
+      setData(newData);
+    } else {
+      alert("this drag can not be performed , because dragging this element violates few parent child relation");
+      return;
+    }
+    
   };
 
   return (
